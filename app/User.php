@@ -8,5 +8,5 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class User extends Authenticatable
 {
     use Notifiable;
-    $protected = "mongodb";
+    protected $connection = "mongodb";
 }

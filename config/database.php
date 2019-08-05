@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mongodb'),
+    'default' => env('DB_CONNECTION'),
 
     /*
     |--------------------------------------------------------------------------
@@ -92,10 +92,19 @@ return [
         ],
         'mongodb' => [
             'driver'   => 'mongodb',
-            'dsn'      => 'mongodb+srv://kopigreen:'.env('DB_PASSWORD_MONGO').'@kopigreenmongo-pkzwi.mongodb.net/test?retryWrites=true&w=majority',
+            'host'     => env('DB_HOST', 'localhost'),
+            'port'     => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
             'options'  => [
-                'database' => 'my_data' // sets the authentication database required by mongo 3
+                'database' => 'admin' // sets the authentication database required by mongo 3
             ]
+        ],
+        'dsn_mongodb' => [
+            'driver'    => 'mongodb',
+            'dsn'       => env('DB_MONGO_DSN'),
+            'database'  => env('DB_MONGO_DATABASE'),
         ],
 
     ],

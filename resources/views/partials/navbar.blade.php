@@ -296,7 +296,7 @@
 								</li>
 
 								<li>
-									<a href="/home">
+									<a href="/profile">
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>

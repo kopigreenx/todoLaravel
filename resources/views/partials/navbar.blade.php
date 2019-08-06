@@ -278,10 +278,10 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <img class="nav-user-photo" src="{{asset('ace/assets/images/avatars/user.jpg')}}" alt="Jason's Photo" />
+                            <img class="nav-user-photo" src="{{asset('ace/assets/images/avatars/profileku.jpg')}}" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									{{ Auth::user()->name }}
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -305,10 +305,15 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+                                    <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
 										<i class="ace-icon fa fa-power-off"></i>
-										Logout
-									</a>
+										{{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 								</li>
 							</ul>
 						</li>

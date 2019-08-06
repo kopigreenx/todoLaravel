@@ -76,9 +76,9 @@
 							</li>
 
 							<li class="">
-								<a href="/sendMail">
+								<a href="/home">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Send E-mail
+									Home
 								</a>
 
 								<b class="arrow"></b>

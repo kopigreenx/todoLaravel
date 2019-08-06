@@ -1750,13 +1750,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {}
 });
@@ -2325,9 +2318,7 @@ var staticRenderFns = [
                       staticClass:
                         "ace-icon fa fa-clock-o bigger-110 hidden-480"
                     }),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUpdate\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
-                    )
+                    _vm._v("\n                Update\n            ")
                   ]),
                   _vm._v(" "),
                   _c("th", { staticClass: "hidden-480" }, [_vm._v("Status")]),

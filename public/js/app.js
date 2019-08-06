@@ -1713,6 +1713,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2243,7 +2287,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "widget-header" }, [
           _c("h5", { staticClass: "widget-title smaller" }, [
-            _vm._v("With Badge")
+            _vm._v("Todo List")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "widget-toolbar" }, [
@@ -2252,11 +2296,82 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "widget-body" }, [
-          _c("div", { staticClass: "widget-main padding-6" }, [
-            _c("div", { staticClass: "alert alert-info" }, [
-              _vm._v(" Hello World! ")
-            ])
-          ])
+          _c(
+            "table",
+            {
+              staticClass: "table  table-bordered table-hover",
+              attrs: { id: "simple-table" }
+            },
+            [
+              _c("thead", [
+                _c("tr", [
+                  _c("th", { staticClass: "center" }, [
+                    _c("label", { staticClass: "pos-rel" }, [
+                      _c("input", {
+                        staticClass: "ace",
+                        attrs: { type: "checkbox" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "lbl" })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Domain")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Price")]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "hidden-480" }, [_vm._v("Clicks")]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("i", {
+                      staticClass:
+                        "ace-icon fa fa-clock-o bigger-110 hidden-480"
+                    }),
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tUpdate\n\t\t\t\t\t\t\t\t\t\t\t\t\t"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "hidden-480" }, [_vm._v("Status")]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", { staticClass: "center" }, [
+                    _c("label", { staticClass: "pos-rel" }, [
+                      _c("input", {
+                        staticClass: "ace",
+                        attrs: { type: "checkbox" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "lbl" })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("ace.com")])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("$45")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "hidden-480" }, [_vm._v("3,330")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Feb 12")]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "hidden-480" }, [
+                    _c(
+                      "span",
+                      { staticClass: "label label-sm label-warning" },
+                      [_vm._v("Expiring")]
+                    )
+                  ])
+                ])
+              ])
+            ]
+          )
         ])
       ]
     )

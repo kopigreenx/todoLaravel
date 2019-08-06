@@ -1,7 +1,7 @@
 <template>
     <div class="widget-box widget-color-dark light-border ui-sortable-handle" id="widget-box-6">
         <div class="widget-header">
-            <h5 class="widget-title smaller">With Badge</h5>
+            <h5 class="widget-title smaller">Todo List</h5>
             <div class="widget-toolbar">
                 <span class="badge badge-danger">Alert</span>
             </div>

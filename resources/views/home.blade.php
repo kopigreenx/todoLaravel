@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title','Profile Page')
 @section('content')
     <div class="breadcrumbs ace-save-state" id="breadcrumbs">
         <ul class="breadcrumb">

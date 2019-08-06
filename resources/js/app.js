@@ -4,9 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
 
 window.Vue = require('vue');
+import axios from 'axios';
+import Datepicker from 'vuejs-datepicker';
+window.axios = axios;
 
 /**
  * The following block of code may be used to automatically register your
@@ -30,3 +32,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+const date_picker = new Vue({
+    el: "#date_picker",
+    components : {
+        Datepicker
+    },
+    data:{
+        date: new Date()
+    }
+})

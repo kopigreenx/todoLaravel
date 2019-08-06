@@ -1,14 +1,14 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
+    <div class="widget-box widget-color-dark light-border ui-sortable-handle" id="widget-box-6">
+        <div class="widget-header">
+            <h5 class="widget-title smaller">With Badge</h5>
+            <div class="widget-toolbar">
+                <span class="badge badge-danger">Alert</span>
+            </div>
+        </div>
+        <div class="widget-body">
+            <div class="widget-main padding-6">
+                <div class="alert alert-info"> Hello World! </div>
             </div>
         </div>
     </div>

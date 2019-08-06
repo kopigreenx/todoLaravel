@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\user;
+use App\UsersInfo as info;
 
 class HomeController extends Controller
 {
@@ -24,11 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $emailLogin = Auth::user()->email;
+        $data = info::where('email', $emailLogin)->get();
+        return view('home',["userinfo" => $data]);
     }
     public function getUserInformation()
     {
-        $user = user::all();
-        return $user;
+        $data = info::all();
+        return json_decode($data);
     }
 }

@@ -10,11 +10,11 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Users extends Eloquent implements
+class UsersInfo extends Eloquent implements
 AuthorizableContract,
 AuthenticatableContract,
 CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
-    protected $collection = "users";
+    protected $collection = "users_information";
 }

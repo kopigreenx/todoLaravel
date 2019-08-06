@@ -14,6 +14,6 @@
 Auth::routes();
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('/about','AboutController@index')->name('about');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/userinfo', 'HomeController@getUserInformation');
+Route::get('/profile', 'HomeController@index')->name('profile');
+Route::get('/profile/userinfo', 'HomeController@getUserInformation');
 

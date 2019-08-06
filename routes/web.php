@@ -12,8 +12,13 @@
 */
 
 Auth::routes();
+//==== INDEX ROUTE ===
 Route::get('/', 'WelcomeController@index')->name('welcome');
+//==== ABOUT ROUTE ===
 Route::get('/about','AboutController@index')->name('about');
+//==== PROFILE ROUTE ===
 Route::get('/profile', 'HomeController@index')->name('profile');
 Route::get('/profile/userinfo', 'HomeController@getUserInformation');
+//==== TODO ROUTE ===
+Route::get('/todo', 'TodoController@index')->name('todo');
 

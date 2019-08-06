@@ -74,6 +74,15 @@
 
 								<b class="arrow"></b>
 							</li>
+
+							<li class="">
+								<a href="/todo">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Todo
+								</a>
+
+								<b class="arrow"></b>
+							</li>
 						</ul>
 					</li>
 

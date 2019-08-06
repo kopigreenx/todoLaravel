@@ -21,9 +21,6 @@
         </div><!-- /.nav-search -->
     </div>
     <div class="page-content">
-        <div class="navbar-item" id="date_picker">
-            <datepicker v-model="date" input-class="input"></datepicker>
-        </div>
         <div id="app">
             <example-component></example-component>
         </div>

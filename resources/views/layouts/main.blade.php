@@ -13,7 +13,16 @@
 		<link rel="stylesheet" href="{{asset('ace/assets/font-awesome/4.5.0/css/font-awesome.min.css')}}" />
         <link href="{{asset('ace/assets/css/ace.min.css')}}" rel="stylesheet" class="ace-main-stylesheet" id="main-ace-style" >
         <link href="{{asset('ace/assets/css/ace-skins.min.css')}}" rel="stylesheet">
-    </head>
+        <link href="{{asset('ace/assets/css/bootstrap-editable.min.css')}}" rel="stylesheet">
+        <link href="{{asset('ace/assets/css/select2.min.css')}}" rel="stylesheet">
+
+    <script src="{{asset('ace/assets/js/jquery-2.1.4.min.js')}}"></script>
+    <script src="{{asset('ace/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('ace/assets/js/ace-elements.min.js')}}"></script>
+    <script src="{{asset('ace/assets/js/ace.min.js')}}"></script>
+    <script src="{{asset('ace/assets/js/bootstrap-editable.min.js')}}"></script>
+    <script src="{{asset('ace/assets/js/select2.min.js')}}"></script>
+</head>
 
     <body class="no-skin">
             @include('partials.navbar')
@@ -30,10 +39,6 @@
 				</div>
             </div>
 
-    <script src="{{asset('ace/assets/js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{asset('ace/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('ace/assets/js/ace-elements.min.js')}}"></script>
-    <script src="{{asset('ace/assets/js/ace.min.js')}}"></script>
 
     <script>
         $(document).ready(function(){

@@ -35,4 +35,8 @@ class HomeController extends Controller
         $data = info::all();
         return json_decode($data);
     }
+    public function store(Request $request)
+    {
+       echo $request;
+    }
 }

@@ -31,14 +31,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        posts: []
+    },
+    mounted() {
+        axios.get('/profile/userinfo').then(response => console.log(response.data) );
+    }
 });
 
-const date_picker = new Vue({
-    el: "#date_picker",
-    components : {
-        Datepicker
-    },
-    data:{
-        date: new Date()
-    }
-})

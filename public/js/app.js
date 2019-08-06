@@ -1758,9 +1758,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -16975,15 +16973,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
-});
-var date_picker = new Vue({
-  el: "#date_picker",
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
+  el: '#app',
   data: {
-    date: new Date()
+    posts: []
+  },
+  mounted: function mounted() {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/profile/userinfo').then(function (response) {
+      return console.log(response.data);
+    });
   }
 });
 
@@ -17076,8 +17073,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\microservice\todoLaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\microservice\todoLaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\kopigreen\Documents\PlayGround\todoLaravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\kopigreen\Documents\PlayGround\todoLaravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -229,4 +229,99 @@
 
 
     </div>
+    <script>
+        jQuery(function($) {
+        $.fn.editable.defaults.mode = 'inline';
+				$.fn.editableform.loading = "<div class='editableform-loading'><i class='ace-icon fa fa-spinner fa-spin fa-2x light-blue'></i></div>";
+			    $.fn.editableform.buttons = '<button type="submit" class="btn btn-info editable-submit"><i class="ace-icon fa fa-check"></i></button>'+
+			                                '<button type="button" class="btn editable-cancel"><i class="ace-icon fa fa-times"></i></button>';
+
+				//editables
+
+				//text editable
+			    $('#username')
+				.editable({
+					type: 'text',
+                    name: 'username',
+                    pk : 'adas',
+                    url : '/profile/save'
+                });
+                var countries = [];
+			    $.each({ "CA": "Canada", "IN": "India", "NL": "Netherlands", "TR": "Turkey", "US": "United States"}, function(k, v) {
+			        countries.push({id: k, text: v});
+			    });
+
+				var cities = [];
+				cities["CA"] = [];
+				$.each(["Toronto", "Ottawa", "Calgary", "Vancouver"] , function(k, v){
+					cities["CA"].push({id: v, text: v});
+				});
+				cities["IN"] = [];
+				$.each(["Delhi", "Mumbai", "Bangalore"] , function(k, v){
+					cities["IN"].push({id: v, text: v});
+				});
+				cities["NL"] = [];
+				$.each(["Amsterdam", "Rotterdam", "The Hague"] , function(k, v){
+					cities["NL"].push({id: v, text: v});
+				});
+				cities["TR"] = [];
+				$.each(["Ankara", "Istanbul", "Izmir"] , function(k, v){
+					cities["TR"].push({id: v, text: v});
+				});
+				cities["US"] = [];
+				$.each(["New York", "Miami", "Los Angeles", "Chicago", "Wysconsin"] , function(k, v){
+					cities["US"].push({id: v, text: v});
+				});
+
+				var currentValue = "NL";
+			    $('#country').editable({
+					type: 'select2',
+					value : 'NL',
+					//onblur:'ignore',
+			        source: countries,
+					select2: {
+						'width': 140
+					},
+					success: function(response, newValue) {
+						if(currentValue == newValue) return;
+						currentValue = newValue;
+
+						var new_source = (!newValue || newValue == "") ? [] : cities[newValue];
+
+						//the destroy method is causing errors in x-editable v1.4.6+
+						//it worked fine in v1.4.5
+						/**
+						$('#city').editable('destroy').editable({
+							type: 'select2',
+							source: new_source
+						}).editable('setValue', null);
+						*/
+
+						//so we remove it altogether and create a new element
+						var city = $('#city').removeAttr('id').get(0);
+						$(city).clone().attr('id', 'city').text('Select City').editable({
+							type: 'select2',
+							value : null,
+							//onblur:'ignore',
+							source: new_source,
+							select2: {
+								'width': 140
+							}
+						}).insertAfter(city);//insert it after previous instance
+						$(city).remove();//remove previous instance
+
+					}
+			    });
+
+				$('#city').editable({
+					type: 'select2',
+					value : 'Amsterdam',
+					//onblur:'ignore',
+			        source: cities[currentValue],
+					select2: {
+						'width': 140
+					}
+			    });
+            })
+    </script>
 @endsection

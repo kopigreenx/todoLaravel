@@ -23,6 +23,7 @@
     <div class="page-content">
         <div id="app">
             <todo-component></todo-component>
+            <todo-add-component></todo-add-component>
         </div>
     </div>
     <script src="{{asset('js/app.js')}}"></script>

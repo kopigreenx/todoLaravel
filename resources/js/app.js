@@ -7,7 +7,6 @@
 
 window.Vue = require('vue');
 import axios from 'axios';
-import Datepicker from 'vuejs-datepicker';
 window.axios = axios;
 
 /**
@@ -22,6 +21,7 @@ window.axios = axios;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('todo-component', require('./components/Todo-component.vue').default);
+Vue.component('todo-add-component', require('./components/todoAddComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,11 +31,8 @@ Vue.component('todo-component', require('./components/Todo-component.vue').defau
 
 const app = new Vue({
     el: '#app',
-    data: {
-        posts: []
-    },
     mounted() {
-        //axios.get('/profile/userinfo').then(response => console.log(response.data) );
+
     }
 });
 

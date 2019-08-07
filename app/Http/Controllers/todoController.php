@@ -26,9 +26,13 @@ class todoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $description = $request->input('description');
+        $todo = new Todo;
+        $todo->description = $description;
+        $todo->confirmed = false;
+        $todo->save();
     }
 
     /**
@@ -39,7 +43,7 @@ class todoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -91,8 +95,10 @@ class todoController extends Controller
      * @param  \App\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function destroy(Request $request,Todo $todo)
     {
-        //
+        $id = $request->input('id');
+        $data = Todo::findOrFail($id);
+        $data->delete();
     }
 }

@@ -19,25 +19,32 @@
                     </label>
                 </th>
                 <th>Description</th>
+                <th width=10>Action</th>
             </tr>
             </thead>
             <tbody >
-                <tr v-for="(todo,key) in todos">
+                <tr v-for="todo in todos">
                 <td class="center">
                     <label class="pos-rel">
-                        <input type="checkbox" class="ace" v-bind:id="key" :checked="todo.confirmed" @change="update(todo._id,$event.target.checked)">
+                        <input type="checkbox" class="ace"  v-bind:_id="todo._id" :checked="todo.confirmed" @change="update(todo._id,$event.target.checked)">
                         <span class="lbl"></span>
                     </label>
                 </td>
                 <td>
-                    <a href="#">{{todo.description}}</a>
+                    <p>{{todo.description}}</p>
+                </td>
+                <td>
+                    <div class="hidden-sm hidden-xs btn-group">
+                        <button class="btn btn-xs btn-danger" @click="hapus(todo._id)">
+						    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+						</button>
+                    </div>
                 </td>
                 </tr>
             </tbody>
         </table>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -48,11 +55,25 @@
             }
         },
         methods: {
-            update:function(id,status) {
-                axios.post('/todo',null,{params:{id,status}}).then(response => console.log(response) );
+            initData:function() {
+                axios.get('/todo/list').then(response => this.todos = response.data );
             },
-            modal_add:function (param) {
+            update:function(id,status) {
+                axios.post('/todo',null,{params:{id,status}})
+                    .then(function (response) {
+                        if(response.status==200){
+                        }
+                    });
+                this.initData();
+            },
+            hapus:function (id) {
+                axios.post('/todo/delete',null,{params:{id}})
+                    .then(function (response) {
+                        if(response.status==200){
+                        }
+                    });
 
+                this.initData();
             }
         },
         mounted() {

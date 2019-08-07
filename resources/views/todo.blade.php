@@ -9,7 +9,7 @@
             <i class="ace-icon fa fa-home home-icon"></i>
             <a href="#">Pages</a>
             </li>
-            <li class="active">About</li>
+            <li class="active">Todo</li>
         </ul><!-- /.breadcrumb -->
         <div class="nav-search" id="nav-search">
             <form class="form-search">

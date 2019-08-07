@@ -50,7 +50,8 @@ class todoController extends Controller
      */
     public function show(Todo $todo)
     {
-        //
+        $data = Todo::all();
+        return $data;
     }
 
     /**
@@ -73,7 +74,15 @@ class todoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        //
+        $id = $request->input('id');
+        $status = $request->status;
+        $data = Todo::findOrFail($id);
+        if ($status=="true") {
+            $data->confirmed = true;
+        }else{
+            $data->confirmed = false;
+        }
+        $data->save();
     }
 
     /**

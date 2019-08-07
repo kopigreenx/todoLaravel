@@ -22,7 +22,7 @@
     </div>
     <div class="page-content">
         <div id="app">
-            <example-component></example-component>
+            <todo-component></todo-component>
         </div>
     </div>
     <script src="{{asset('js/app.js')}}"></script>

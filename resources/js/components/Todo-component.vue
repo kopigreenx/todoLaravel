@@ -1,4 +1,5 @@
 <template>
+    <div class="col-xs-6">
     <div class="widget-box widget-color-dark light-border ui-sortable-handle" id="widget-box-6">
         <div class="widget-header">
             <h5 class="widget-title smaller">Todo List</h5>
@@ -23,18 +24,19 @@
             </tr>
             </thead>
             <tbody >
-                <tr v-for="todo in todos">
+                <tr v-for="todo in todos" :key="todo._id">
                 <td class="center">
                     <label class="pos-rel">
-                        <input type="checkbox" class="ace"  v-bind:_id="todo._id" :checked="todo.confirmed" @change="update(todo._id,$event.target.checked)">
+                        <input type="checkbox" class="ace"  v-bind:_id="todo._id" :checked="todo.confirmed" :value="todo._id" @change="update(todo._id,$event.target.checked)">
                         <span class="lbl"></span>
                     </label>
                 </td>
                 <td>
+                    <p>{{checked}}</p>
                     <p>{{todo.description}}</p>
                 </td>
                 <td>
-                    <div class="hidden-sm hidden-xs btn-group">
+                    <div class="hidden-sm hidden-xs btn-group" v-if="!todo.confirmed">
                         <button class="btn btn-xs btn-danger" @click="hapus(todo._id)">
 						    <i class="ace-icon fa fa-trash-o bigger-120"></i>
 						</button>
@@ -44,6 +46,7 @@
             </tbody>
         </table>
         </div>
+    </div>
     </div>
 </template>
 

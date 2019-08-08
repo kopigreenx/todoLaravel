@@ -1746,6 +1746,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2363,82 +2366,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "widget-box widget-color-dark light-border ui-sortable-handle",
-      attrs: { id: "widget-box-6" }
-    },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "widget-body" }, [
-        _c(
-          "table",
-          {
-            staticClass: "table  table-bordered table-hover",
-            attrs: { id: "simple-table" }
-          },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.todos, function(todo) {
-                return _c("tr", [
-                  _c("td", { staticClass: "center" }, [
-                    _c("label", { staticClass: "pos-rel" }, [
-                      _c("input", {
-                        staticClass: "ace",
-                        attrs: { type: "checkbox", _id: todo._id },
-                        domProps: { checked: todo.confirmed },
-                        on: {
-                          change: function($event) {
-                            return _vm.update(todo._id, $event.target.checked)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "lbl" })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_c("p", [_vm._v(_vm._s(todo.description))])]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "div",
-                      { staticClass: "hidden-sm hidden-xs btn-group" },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-xs btn-danger",
-                            on: {
-                              click: function($event) {
-                                return _vm.hapus(todo._id)
-                              }
-                            }
+  return _c("div", { staticClass: "col-xs-6" }, [
+    _c(
+      "div",
+      {
+        staticClass:
+          "widget-box widget-color-dark light-border ui-sortable-handle",
+        attrs: { id: "widget-box-6" }
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "widget-body" }, [
+          _c(
+            "table",
+            {
+              staticClass: "table  table-bordered table-hover",
+              attrs: { id: "simple-table" }
+            },
+            [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.todos, function(todo) {
+                  return _c("tr", { key: todo._id }, [
+                    _c("td", { staticClass: "center" }, [
+                      _c("label", { staticClass: "pos-rel" }, [
+                        _c("input", {
+                          staticClass: "ace",
+                          attrs: { type: "checkbox", _id: todo._id },
+                          domProps: {
+                            checked: todo.confirmed,
+                            value: todo._id
                           },
-                          [
-                            _c("i", {
-                              staticClass: "ace-icon fa fa-trash-o bigger-120"
-                            })
-                          ]
-                        )
-                      ]
-                    )
+                          on: {
+                            change: function($event) {
+                              return _vm.update(todo._id, $event.target.checked)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "lbl" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("p", [_vm._v(_vm._s(_vm.checked))]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(todo.description))])
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      !todo.confirmed
+                        ? _c(
+                            "div",
+                            { staticClass: "hidden-sm hidden-xs btn-group" },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-xs btn-danger",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.hapus(todo._id)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass:
+                                      "ace-icon fa fa-trash-o bigger-120"
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        : _vm._e()
+                    ])
                   ])
-                ])
-              }),
-              0
-            )
-          ]
-        )
-      ])
-    ]
-  )
+                }),
+                0
+              )
+            ]
+          )
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {

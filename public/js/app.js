@@ -1749,11 +1749,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      todos: []
+      todos: [],
+      todosEdit: []
     };
+  },
+  props: function props() {
+    todosEdit: Object;
   },
   methods: {
     initData: function initData() {
@@ -1783,6 +1789,13 @@ __webpack_require__.r(__webpack_exports__);
         if (response.status == 200) {}
       });
       this.initData();
+    },
+    editTodo: function editTodo(todo) {
+      var data = {
+        id_: todo._id,
+        desc: todo.description
+      };
+      this.todosEdit = data;
     }
   },
   mounted: function mounted() {
@@ -1839,6 +1852,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    todos: []
+  },
   mounted: function mounted() {},
   data: function data() {
     return {
@@ -2411,11 +2427,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("td", [
-                      _c("p", [_vm._v(_vm._s(_vm.checked))]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(todo.description))])
-                    ]),
+                    _c("td", [_c("p", [_vm._v(_vm._s(todo.description))])]),
                     _vm._v(" "),
                     _c("td", [
                       !todo.confirmed
@@ -2437,6 +2449,24 @@ var render = function() {
                                   _c("i", {
                                     staticClass:
                                       "ace-icon fa fa-trash-o bigger-120"
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-xs btn-info",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.editTodo(todo)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass:
+                                      "ace-icon fa fa-pencil bigger-120"
                                   })
                                 ]
                               )
@@ -2491,7 +2521,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { staticClass: "center" }, [
+        _c("th", { staticClass: "center", attrs: { width: "5%" } }, [
           _c("label", { staticClass: "pos-rel" }, [
             _c("input", { staticClass: "ace", attrs: { type: "checkbox" } }),
             _vm._v(" "),
@@ -2499,9 +2529,9 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Description")]),
+        _c("th", { attrs: { width: "75%" } }, [_vm._v("Description")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "10" } }, [_vm._v("Action")])
+        _c("th", { attrs: { width: "20%" } }, [_vm._v("Action")])
       ])
     ])
   }

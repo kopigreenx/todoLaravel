@@ -13,14 +13,14 @@
         <table id="simple-table" class="table  table-bordered table-hover">
             <thead>
             <tr>
-                <th class="center">
+                <th class="center" width=5%>
                     <label class="pos-rel">
                         <input type="checkbox" class="ace">
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>Description</th>
-                <th width=10>Action</th>
+                <th width=75%>Description</th>
+                <th width=20%>Action</th>
             </tr>
             </thead>
             <tbody >
@@ -32,13 +32,15 @@
                     </label>
                 </td>
                 <td>
-                    <p>{{checked}}</p>
                     <p>{{todo.description}}</p>
                 </td>
                 <td>
                     <div class="hidden-sm hidden-xs btn-group" v-if="!todo.confirmed">
                         <button class="btn btn-xs btn-danger" @click="hapus(todo._id)">
 						    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+						</button>
+                        <button class="btn btn-xs btn-info" @click="editTodo(todo)">
+							<i class="ace-icon fa fa-pencil bigger-120"></i>
 						</button>
                     </div>
                 </td>
@@ -54,8 +56,12 @@
     export default {
         data(){
             return{
-                todos:[]
+                todos:[],
+                todosEdit:[]
             }
+        },
+        props(){
+            todosEdit:Object
         },
         methods: {
             initData:function() {
@@ -77,6 +83,14 @@
                     });
 
                 this.initData();
+            },
+
+            editTodo:function (todo) {
+                const data = {
+                    id_ : todo._id,
+                    desc: todo.description
+                };
+                this.todosEdit = data;
             }
         },
         mounted() {
